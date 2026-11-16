@@ -29,3 +29,9 @@ Os efeitos sonoros são sintetizados no navegador via Web Audio API; a voz do na
 3. No Firestore, confira `saves/{UID exibido no jogo}`.
 4. Teste offline: o jogo deve manter o save local e indicar que a nuvem está indisponível.
 5. Não use o botão **Novo Jogo** para testar persistência: ele reinicia a campanha.
+
+## Atualização visual v4.5 — arte das missões
+- `assets/missoes-sprite.png`: grade 4x5 com 20 ilustrações temáticas, uma para cada missão.
+- `assets/cena-mineracao-referencia.png`: imagem de referência aplicada ao banner principal.
+- Cada cartão de missão e o banner do painel mostram a arte correspondente ao desafio atual.
+- O cache do Service Worker foi atualizado para incluir as imagens e renovar os arquivos antigos.
