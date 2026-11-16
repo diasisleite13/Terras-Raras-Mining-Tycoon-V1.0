@@ -1,5 +1,5 @@
-const CACHE_NAME = "terras-raras-game-v4-5";
-const APP_FILES = ["./", "./index.html", "./style.css", "./app.js", "./manifest.json"];
+const CACHE_NAME = "terras-raras-game-v4-5-art";
+const APP_FILES = ["./", "./index.html", "./style.css", "./app.js", "./manifest.json", "./assets/missoes-sprite.png", "./assets/cena-mineracao-referencia.png"];
 
 self.addEventListener("install", event => {
   event.waitUntil((async () => {
