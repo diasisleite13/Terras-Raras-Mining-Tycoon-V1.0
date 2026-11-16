@@ -553,7 +553,14 @@ function renderDashboard(){
 
   const isPhase2 = state.completed.length >= 10;
   const theme = isPhase2 ? STAGE_THEMES[2] : (state.completed.length >= 3 ? STAGE_THEMES[1] : STAGE_THEMES[0]);
-  if($("heroScene")) $("heroScene").innerHTML = `${theme.svg}<span class="hero-stage-tag">${theme.name}</span>`;
+  if($("heroScene")) {
+    const artIndex = idx < 0 ? 19 : idx;
+    const col = artIndex % 4;
+    const row = Math.floor(artIndex / 4);
+    const x = (col / 3) * 100;
+    const y = (row / 4) * 100;
+    $("heroScene").innerHTML = `<div class="hero-mission-art" style="background-position:${x}% ${y}%"></div><span class="hero-stage-tag">${theme.name}</span>`;
+  }
 
   if($("heroKicker")) $("heroKicker").textContent = isPhase2 ? "FASE 2 · NANOFABRICAÇÃO & ESPAÇO (11-20)" : "FASE 1 · MINERAÇÃO & BRITAGEM (1-10)";
   if($("heroTitle")) $("heroTitle").innerHTML = isPhase2 ? "Era dos Chips<br><em>& Estrelas!</em>" : "Britador BM-1200<br><em>em ação!</em>";
@@ -597,6 +604,7 @@ function renderMissions(){
     const readyToClaim = unlocked && !done && (state.stock[m.goal] || 0) >= m.target;
     return `
       <article class="mission-card ${done ? "completed" : unlocked ? "unlocked" : "locked"}">
+        <div class="mission-art" style="background-position:${((i % 4) / 3) * 100}% ${(Math.floor(i / 4) / 4) * 100}%" role="img" aria-label="Ilustração da missão ${i + 1}: ${m.title}"></div>
         <div class="mission-number">${done ? "✅" : m.sticker}</div>
         <div class="mission-info">
           <h3>Missão ${String(i + 1).padStart(2, "0")}: ${m.title}</h3>
