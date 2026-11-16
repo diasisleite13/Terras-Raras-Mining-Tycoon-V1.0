@@ -100,7 +100,7 @@ const UPGRADES = [
 
 // Estoque inicial calibrado: 25.000 Minério Bruto + 250.000 Créditos
 const DEFAULT_STATE = {
-  coins: 250000,
+  coins: 400000,
   stock: { ore: 25000, concentrate: 0, mixed: 0, oxide: 0, metal: 0, alloy: 0, magnet: 0, motor: 0, chip: 0, battery: 0, quantum_core: 0, vovo_artifact: 0 },
   produced: { concentrate: 0, mixed: 0, oxide: 0, metal: 0, alloy: 0, magnet: 0, motor: 0, chip: 0, battery: 0, quantum_core: 0, vovo_artifact: 0 },
   completed: [],
